@@ -1,0 +1,51 @@
+#server:
+#  port: 8000
+#
+##服务名称
+#spring:
+#  application:
+#    name: video-order-service
+#  #添加zipkin
+#  zipkin:
+#    base-url: http://127.0.0.1:9411
+#    discovery-client-enabled: false
+#  #添加sleuth采样百分比  10个请求记录1次为0.1
+#  sleuth:
+#    sampler:
+#      probability: 1.0 #采样百分比为100%
+#  cloud:
+##    配置nacos
+#    nacos:
+#      discovery:
+#        server-addr: 61.135.32.130:58848
+#    #配置sentinel
+#    sentinel:
+#      transport:
+#        dashboard: localhost:59999    #控制台ip端口
+#        port: 60000     #微服务和控制台通讯的端口
+#
+#
+#  #    数据库连接
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://61.135.32.130:23305/cloud_video_order?useUnicode=true&characterEncoding=utf8&useSSL=false
+#    username: root
+#    password: 123456
+#
+## 控制台输出sql、下划线转驼峰
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+#
+##配置ribbon负载均衡，和openfeign也有关，openfeign底层就是ribbon
+##常用 默认 的和 WeightedResponseTimeRule
+##video-service:
+##  ribbon:
+##    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule   #该策略是随机请求video-service的某个服务
+#
+#
+##开启feign支持sentinel
+#feign:
+#  sentinel:
+#    enabled: true

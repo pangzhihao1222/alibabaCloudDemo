@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      config:
+        server-addr: 61.135.32.130:58848   #Nacos配置中⼼地址
+        file-extension: yaml #在配置中心的⽂件拓展格式
+  profiles: #指定配置文件生效
+    active: dev
